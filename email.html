@@ -1,0 +1,25 @@
+MIME-Version: 1.0
+Content-Type: text/html; charset=ISO-8859-1
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1> Reddit Digest</h1>
+	<p>Here is your daily digest of reddit articles:</p>
+
+
+	{{ range $i, $sub := . }}
+		<div>
+			{{ if ne $i 0 }}
+				<br>
+			{{ end }}
+			<h2><a href="http://reddit.com/r/{{ $sub.Name }}/top">/r/{{ $sub.Name }}</a></h2>
+			{{ range $key, $post := $sub.Posts }}
+				<p><a href="{{$post.Url}}">{{ $post.Title }}</a></p>
+			{{ end }}
+		</div>
+	{{ end }}
+</body>
+<html>
