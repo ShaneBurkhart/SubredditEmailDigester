@@ -1,0 +1,4 @@
+# Subreddit Email Digest
+
+This app compiles a digest form a selected list of subreddits and sends an email for the top posts in those subreddits that day.
+
